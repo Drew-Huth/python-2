@@ -18,7 +18,7 @@ def ex1():
     {'name': 'charlie', 'age': 15, 'weight': 120, 'sex': 'female', 'id': 3},
     ]
     sort_people(people_list, 'weight', 'asc')
-    print(people_list)
+    pprint(people_list)
    
 def sort_people(people, x, y):
     z = False    
@@ -35,7 +35,7 @@ def ex2():
         {'name': 'charlie', 'age': 15, 'weight': 120, 'sex': 'female', 'id': 3},
     ]
     filtered_list = filter_males(people_list)
-    print(filtered_list)
+    pprint(filtered_list)
 
 def filter_males(people_list):
 
@@ -44,11 +44,14 @@ def filter_males(people_list):
 
 def ex3():
     people_list = [
-        {'id': 2, 'name': 'bob',     'weight_kg': 90, 'height_meters': 1.7},
-        {'id': 3, 'name': 'charlie', 'weight_kg': 80, 'height_meters': 1.8},
+        # {'id': 2, 'name': 'bob', 'weight_kg': 90, 'height_meters': 1.7},
+        # {'id': 3, 'name': 'charlie', 'weight_kg': 80, 'height_meters': 1.8},
+        {'id': 2, 'name':'bob', 'weight_kg':90, 'height_meters':1.7},
+        {'id': 3, 'name':'charlie', 'weight_kg':80, 'height_meters':1.8}
     ]
     new_people_list = calc_bmi(people_list)
-    print(new_people_list)
+    pprint(new_people_list)
+
 def transform_person(person):
     retval = {
         'id': person['id'], 
@@ -56,10 +59,11 @@ def transform_person(person):
         'weight_kg': person['weight_kg'], 
         'height_meters': person['height_meters'], 
         'bmi': (round(person['weight_kg'] / person['height_meters'] ** 2, 1))
-    } 
+    }
     return retval
+
 def calc_bmi(people_list):
-    return list(map(transform_person, people_list)) 
+    return list(map(transform_person, people_list))
 
 def ex4():
     people_list = [
